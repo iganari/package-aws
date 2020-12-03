@@ -58,3 +58,12 @@ aws route53 list-resource-record-sets --hosted-zone-id ${_hostedzone_id} --outpu
     ]
 }
 ```
+
++ 上記の JQON を元に追加
+
+```
+aws route53 change-resource-record-sets \
+  --hosted-zone-id ${_hostedzone_id} \
+  --change-batch file://add-a-record.json
+```
+
